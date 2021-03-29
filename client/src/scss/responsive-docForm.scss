@@ -1,0 +1,34 @@
+.InputBox {
+    margin: 0.5em;
+    width: 100%;
+    text-align: left;
+}
+
+.InputRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.textAreaBox {
+    margin: 0.5em;
+    width: 50%;
+    text-align: left;
+}
+
+
+@media screen and (max-width: 600px){
+    .InputRow {
+        display: block;
+    }
+    .InputBox {
+        margin: 0.5em;
+        width: 95%;
+        text-align: left;
+    }
+    .textAreaBox {
+        margin: 0.5em;
+        width: 95%;
+        text-align: left;
+    }
+    
+}

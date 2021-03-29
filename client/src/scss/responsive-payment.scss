@@ -1,0 +1,93 @@
+.titlePaymentPage {
+    color: black;
+    font-size: 45px;
+}
+
+.mb-payment {
+    margin-bottom: 1em;
+}
+
+.payment-table {
+    width: 1920px;
+}
+
+.topice-order {
+    width: auto;
+
+}
+.size-order {
+    width: auto;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.l-align {
+    text-align: left;
+}
+
+.modalSelectChild {
+    width: 280px;
+    font-size: 19px;
+}
+
+.increase-top-date-input {
+    margin-top: 2rem;
+}
+
+.widthModal {
+    width: 500px;
+}
+
+.showModalScreen {
+    display: flex;
+    flex-direction: row;
+}
+
+.SelectChild {
+    text-align: left;
+    margin-left: 1em;
+}
+
+.print-btn {
+    border-radius: 5px;
+    border: 2px;
+    border-color: #FFF;
+    background-color: #69C9F8;
+    margin-left: 0.5vw;
+}
+
+@media screen and (max-width: 1022px){
+    .titlePaymentPage {
+        color: black;
+        font-size: 25px;
+    }
+    .widthModal {
+        width: 300px;
+    }
+    .modalSelectChild {
+        width: 200px;
+        font-size: 19px;
+    }
+    .showModalScreen {
+        display: block;
+    }
+    .SelectChild {
+        text-align: left;
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    .payment-table {
+        width: 1200px;
+    }
+    .modal-card-title {
+        font-size: 15px;
+    }
+}

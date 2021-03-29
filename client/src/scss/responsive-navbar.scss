@@ -1,0 +1,111 @@
+.navbarTop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  
+}
+
+.navbarColor {
+  background-color: #6e5b98;
+  font-size: 20px;
+}
+.navMenuSize {
+  font-size: 20px;
+}
+
+.logoutBtn {
+  font-size: 20px;
+  background-color: #6E5C98;
+  color: #fff;
+}
+
+.logoutBtn:hover {
+  cursor: pointer;
+}
+.menuIcon {
+  font-size: 30px;
+  display: none;
+}
+.roleAdmin {
+  margin-right: 0.5em;
+  font-size: 30px;
+  color: #fcb239;
+}
+.roleTeacher {
+  margin-right: 0.5em;
+  font-size: 30px;
+  color: #b9c3d9;
+}
+.roleAaccountant {
+  margin-right: 0.5em;
+  font-size: 30px;
+  color: #bed290;
+}
+
+.textHover {
+  div:hover {
+    color: black;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+.btnBackMobile{
+ display: none;   
+}
+
+
+@media screen and (max-width: 1022px) {
+  .btnBackMobile{
+    margin-top: 2px;
+    display: block;
+    color: white;
+    cursor: pointer;
+  }
+  .btnBack{
+    display: none;
+  }
+  .navMenuSize {
+    font-size: 15px;
+  }
+  .roleAdmin {
+    margin-right: 0.5em;
+    font-size: 15px;
+    color: #fcb239;
+  }
+  .roleTeacher {
+    margin-right: 0.5em;
+    font-size: 15px;
+    color: #b9c3d9;
+  }
+  .roleAaccountant {
+    margin-right: 0.5em;
+    font-size: 15px;
+    color: #bed290;
+  }
+  .End {
+    font-size: 15px;
+  }
+  .logoutBtn {
+    font-size: 15px;
+    color: #fff;
+  }
+  .menuIcon {
+    color: white;
+    font-size: 20px;
+    display: flex;
+    text-align: right;
+  }
+  .menuDropdown {
+    position: absolute;
+    top: 69.5px;
+    width: 100%;
+    left: 0;
+  }
+  .mobileLogout {
+    color: white;
+    font-size: 20px;
+    margin-left: 0.5em;  
+  }
+}

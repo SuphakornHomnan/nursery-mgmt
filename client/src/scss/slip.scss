@@ -1,0 +1,75 @@
+.footer-slip,
+.header-slip,
+.section-two {
+  display: flex;
+  flex-direction: row;
+}
+
+.checker {
+  margin: 0 4vw;
+}
+
+.table-slip table,
+th,
+td {
+  border: 2px solid;
+  padding: 1em;
+}
+
+.increase td {
+  height: 30vh;
+}
+
+.footer-slip {
+  padding: 2rem 1rem;
+}
+
+.btn {
+  margin: 0em 0.25em;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.sub-section-two {
+  padding-left: 5rem;
+}
+
+.left-text {
+  text-align: left;
+}
+
+.print-link {
+  color: red;
+}
+.print-link:hover {
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+.tail-slip {
+  display: flex;
+  justify-content: space-between;
+  // flex: 1 1 0%;
+}
+
+.container-slip {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table-slip,
+.header-slip,
+.footer-slip {
+  width: 85%;
+}
+
+.header-slip {
+  justify-content: space-between;
+}
+
+.title-slip {
+  margin-top: 3rem;
+}

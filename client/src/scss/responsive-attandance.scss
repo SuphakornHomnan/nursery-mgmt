@@ -1,0 +1,61 @@
+.titleAttPage {
+    color: black;
+    font-size: 45px;
+}
+
+.dropdownAtt {
+    display: flex;
+}
+
+.selectMonthAtt {
+    text-align: left;
+    width: 200px;
+    margin: 1rem;
+}
+
+.attendance-table {
+    width: 2000px;
+}
+
+.selectRoomAtt {
+    text-align: left;
+    margin: 1rem;
+}
+
+.print-btn,.back-btn {
+    text-align: left;
+    margin: 1rem;
+    padding-top: 0.5vw;
+
+}
+
+.print-btn button {
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    background-color: blue;
+    color: #fff;
+}
+
+.back-btn button {
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+
+}
+.print-btn button:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 1022px){
+    .titleAttPage {
+        color: black;
+        font-size: 25px;
+    }
+    .dropdownAtt {
+        display: block;
+    }
+    .modal-attendance {
+        width: 350px
+    }
+}

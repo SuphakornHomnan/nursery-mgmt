@@ -1,0 +1,23 @@
+.InputBox {
+    margin: 0.5em;
+    width: 100%;
+    text-align: left;
+}
+
+.InputRow {
+    display: flex;
+    flex-direction: row;
+}
+
+
+@media screen and (max-width: 600px){
+    .InputRow {
+        display: block;
+    }
+    .InputBox {
+        margin: 0.5em;
+        width: 95%;
+        text-align: left;
+    }
+    
+}

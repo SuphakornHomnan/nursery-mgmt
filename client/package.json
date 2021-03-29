@@ -1,0 +1,78 @@
+{
+  "name": "nursery-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.13",
+    "@material-ui/core": "^4.11.2",
+    "@reduxjs/toolkit": "^1.5.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "async": "^3.2.0",
+    "axios": "^0.21.0",
+    "babel": "^6.23.0",
+    "bootstrap": "^4.5.3",
+    "bulma": "^0.9.1",
+    "bulma-carousel": "^4.0.4",
+    "bulma-helpers": "^0.3.12",
+    "canvasjs": "^1.8.3",
+    "chart.js": "^2.9.4",
+    "dotenv": "^8.2.0",
+    "firebase": "^8.2.1",
+    "font-awesome": "^4.7.0",
+    "is-promise": "^4.0.0",
+    "moment": "^2.29.1",
+    "node-sass": "^4.14.1",
+    "react": "^17.0.1",
+    "react-awesome-slider": "^4.1.0",
+    "react-bootstrap": "^1.4.3",
+    "react-chartjs-2": "^2.11.1",
+    "react-dom": "^17.0.1",
+    "react-elastic-carousel": "^0.11.0",
+    "react-hook-form": "^6.13.0",
+    "react-loader-spinner": "^3.1.14",
+    "react-redux": "^7.2.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.4",
+    "react-thunk": "^1.0.0",
+    "react-to-print": "^2.12.3",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "serve": "^11.3.2",
+    "thai-baht-text": "^1.0.8",
+    "yarn": "^1.22.10",
+    "yup": "^0.32.8"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "start:prod" : "serve -l 3000 -s build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@creativebulma/bulma-tooltip": "^1.2.0"
+  }
+}

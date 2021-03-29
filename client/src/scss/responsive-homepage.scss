@@ -1,0 +1,25 @@
+.dropdown {
+    display: flex;
+}
+
+.titleHomePage {
+    color: black;
+    font-size: 45px;
+}
+
+.selectHome {
+    text-align: left;
+    margin: 1em;
+    width: 200px;
+}
+
+
+@media screen and (max-width: 1022px){
+    .dropdown {
+        display: block;
+    }
+    .titleHomePage {
+        color: black;
+        font-size: 25px;
+    }
+}

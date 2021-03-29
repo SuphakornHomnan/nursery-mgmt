@@ -1,0 +1,63 @@
+.FontAll {
+  font-family: "Itim", cursive;
+}
+
+.FontTableHeaderSize {
+  font-size: 20px;
+}
+
+.FontTableRowSize {
+  font-size: 18px;
+}
+
+.mt1 {
+  margin-top: 1em;
+}
+
+.color-table-header {
+  background-color: #F2EBE2;
+}
+
+.normal-color {
+  color: #069903;
+}
+
+.defective-color{
+  color: #F80602;
+}
+
+.overflowX {
+  overflow-x: scroll;
+}
+
+.loginColor {
+  background-color: #6e5c98;
+  text-align: center;
+  height: 100vh;
+}
+
+.Allcontent {
+  padding-top: 100px;
+}
+
+.btnSize {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1022px) {
+  .Allcontent {
+    padding-top: 70px;
+  }
+  .FontTableHeaderSize {
+    font-size: 15px;
+  }
+  .FontTableRowSize {
+    font-size: 14px;
+  }
+  .btnSize {
+    font-size: 15px;
+  }
+  .modal-card-title{
+    font-size: 20px;
+  }
+}

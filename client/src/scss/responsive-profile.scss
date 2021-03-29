@@ -1,0 +1,96 @@
+
+
+.titleProfilePage {
+  color: black;
+  font-size: 45px;
+}
+
+.nameCheck {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #0568f7;
+  margin-bottom: 1vw;
+}
+
+.add-customer-no {
+  border-radius: 15px;
+  border: none;
+  margin-left: 0.5rem;
+}
+
+.add-customer-no:hover{
+  background-color: floralwhite;
+}
+
+.add-customer-no:focus {
+  outline: none;
+}
+
+.customer-no-input {
+  width: 30%;
+}
+
+.btnChart {
+  border-radius: 5px;
+  background-color: #fd6384;
+  border-color: #fff;
+  border: 2px;
+  color: #fff;
+}
+
+.btnProfileInfo {
+  border-radius: 5px;
+  margin-left: 1vw;
+  background-color: #69c9f8;
+  border-color: #fff;
+  border: 2px;
+  color: #fff;
+}
+
+.btnBill {
+  border-radius: 5px;
+  margin-left: 1vw;
+  background-color: #21b604;
+  border-color: #fff;
+  border: 2px;
+  color: #fff;
+}
+
+.btnDelete {
+  border-radius: 5px;
+  margin-left: 1vw;
+  background-color: #f2240c;
+  border-color: #fff;
+  border: 2px;
+  color: #fff;
+}
+
+.btnslip {
+  border-radius: 5px;
+  margin-left: 1vw;
+  background-color: #ece204;
+  border-color: #fff;
+  border: 2px;
+  color: #fff;
+}
+.widthModal{
+  width: 500px;
+}
+
+@media screen and (max-width: 1022px) {
+  .customer-no-input {
+    width: 100%
+  }
+  .titleProfilePage {
+    color: black;
+    font-size: 25px;
+  }
+  .widthModal{
+    width: 300px;
+  }
+  .table-profile {
+    width: 1100px
+  }
+}
+
+

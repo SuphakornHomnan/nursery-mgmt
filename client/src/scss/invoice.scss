@@ -1,0 +1,118 @@
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.choose {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-invoice {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.head-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+
+.container {
+
+  color: #0483ec;
+  font-size: 15px;
+}
+
+.first-section {
+  display: flex;
+  flex-direction: column;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #section-to-print,
+  #section-to-print * {
+    visibility: visible;
+    font-family: "Courier New", Courier, monospace;
+  }
+  // #section-to-print {
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  // }
+
+}
+
+
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.second-section {
+  display: flex;
+  flex-direction: row;
+  //   background-color: deepskyblue;
+}
+
+tr#invoice-increase {
+  height: 200px;
+}
+
+th#invoice-table {
+  border-color: #0483ec;
+}
+.tax-id {
+  margin-right: 17rem;
+  margin-top: 3vh;
+}
+
+.first-sub-section,
+.second-sub-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-sub-section,
+.second-sub-section {
+  width: 100px;
+}
+.name-invoice {
+  text-align: left;
+  width: 325px;
+}
+
+.head-table th {
+  color: #0483ec;
+}
+.price {
+  margin-left: 6vw;
+}
+
+.table-container table,
+th,
+td {
+  border: 1px solid #0483ec;
+}

@@ -1,0 +1,32 @@
+.titleGadgetPage {
+    color: black;
+    font-size: 45px;
+}
+
+.dropdownGadget {
+    display: flex;
+}
+
+.selectMonthGadget {
+    text-align: left;
+    width: 200px;
+    margin: 1rem;
+}
+
+.selectRoomGadget {
+    text-align: left;
+    margin: 1rem;
+}
+
+@media screen and (max-width: 1022px){
+    .titleGadgetPage {
+        color: black;
+        font-size: 25px;
+    }
+    .dropdownGadget {
+        display: block;
+    }
+    .gadget-table {
+        width : 700px
+    }
+}
