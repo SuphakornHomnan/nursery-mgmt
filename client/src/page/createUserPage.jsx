@@ -54,7 +54,7 @@ const CreateUserPage = ({history}) => {
                                             <div className="select is-fullwidth">
                                                 <select onChange={({target})=> setPosition(target.value)}>
                                                     <option value="accountant">นักบัญชี(Accountant)</option>
-                                                    <option value='teacher'>คุณครู(Teacher)</option>
+                                                    <option value="teacher">คุณครู(Teacher)</option>
                                                 </select>
                                             </div>
                                         </div>
