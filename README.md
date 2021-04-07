@@ -6,7 +6,12 @@
  $ cd nursery-mgmt
  $ docker-compose up 
 ```
-
+- How to use (optional function) Line push messaging service
+```sh
+ $ cd api-line-bot
+ $ yarn 
+ $ yarn dev
+```
 - [API Document (PDF)](docs/nursery-api-docs.pdf)
 
 ## Dev Team

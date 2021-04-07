@@ -118,6 +118,7 @@ module.exports = {
             heightValue,
             gender
           )
+          console.log(standardOne);
           profileList.push(
             setInfoProfileTable(
               m,

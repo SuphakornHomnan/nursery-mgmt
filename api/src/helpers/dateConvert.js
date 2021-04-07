@@ -96,7 +96,10 @@ exports.standardInfo = (type, value, sd, median) => {
   const sd15 = median + 1.5 * sd
   const SD_15 = median - 1.5 * sd
   const SD_2 = median - 2 * sd
-
+  console.log(sd2);
+  console.log(sd15);
+  console.log(SD_15);
+  console.log(SD_2);
   if (value >= sd2) {
     if (type === 'standard_one') {
       return {
@@ -106,19 +109,19 @@ exports.standardInfo = (type, value, sd, median) => {
     } else if (type === 'standard_two') {
       return { list: 'สูง', color: '#1278FA' }
     }
-  } else if (value < sd2 && value > sd15) {
+  } else if (value < sd2 && value >= sd15) {
     if (type === 'standard_one') {
       return { list: 'น้ำหนักค่อนข้างมาก', color: '#EA7202' }
     } else if (type === 'standard_two') {
       return { list: 'ค่อนข้างสูง', color: '#EA7202' }
     }
-  } else if (value < sd15 && value > SD_15) {
+  } else if (value < sd15 && value >= SD_15) {
     if (type === 'standard_one') {
       return { list: 'น้ำหนักตามเกณฑ์', color: '#038518' }
     } else if (type === 'standard_two') {
       return { list: 'ส่วนสูงตามเกณฑ์', color: '#038518' }
     }
-  } else if (value < SD_15 && value > SD_2) {
+  } else if (value < SD_15 && value >= SD_2) {
     if (type === 'standard_one') {
       return { list: 'น้ำหนักค่อนข้างน้อย', color: '#EA7202' }
     } else if (type === 'standard_two') {

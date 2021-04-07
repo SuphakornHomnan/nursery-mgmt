@@ -5,6 +5,10 @@ const { standardInfo, weightHeightInfo } = require('../helpers/dateConvert')
 
 exports.calculateStandardOne = async (weight, gender, year, month) => {
   let standard = ''
+  console.log(gender);
+  console.log(weight);
+  console.log(year);
+  console.log(month);
   if (weight === 0 || weight === null) {
     return standard
   } else {
