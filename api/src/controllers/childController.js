@@ -1,16 +1,16 @@
 const mongoose = require('mongoose')
 
-const rooms = require('../database/models/enrollment')
-const childs = require('../database/models/child')
-const childStatic = require('../database/models/childStatic')
-const childDynamic = require('../database/models/child_dynamic')
-const customers = require('../database/models/customer')
-const { calculateStandardOne, calculateStandardTwo, calculateStandardThree } = require('../database/calulateStandard')
+const rooms = require('../domain/models/enrollment')
+const childs = require('../domain/models/child')
+const childStatic = require('../domain/models/childStatic')
+const childDynamic = require('../domain/models/child_dynamic')
+const customers = require('../domain/models/customer')
+const { calculateStandardOne, calculateStandardTwo, calculateStandardThree } = require('../domain/calulateStandard')
 const {
   sendSuccessResponse,
   sendErrorResponse
 } = require('../helpers/apiResponse')
-const { stringToObjectId } = require('../database/models/roomType')
+const { stringToObjectId } = require('../domain/models/roomType')
 
 module.exports = {
   async addCustomerId (req, res) {

@@ -1,4 +1,4 @@
-const guardians = require('../database/models/guardian')
+const guardians = require('../domain/models/guardian')
 
 const {
   sendSuccessResponse,

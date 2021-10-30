@@ -1,27 +1,31 @@
-const addresses = require('../database/models/address')
-const childs = require('../database/models/child')
-const childDynamicInfo = require('../database/models/child_dynamic')
-const childStaticInfo = require('../database/models/childStatic')
-const documents = require('../database/models_v2/document')
-const guardians = require('../database/models/guardian')
-const habits = require('../database/models/child_info')
-const historyStocks = require('../database/models/history_stock')
-const medicals = require('../database/models/medical')
-const medicalsV2 = require('../database/models_v2/medical')
-const rooms = require('../database/models/enrollment')
-// const infoItems = require('../database/models/info_item')
-const stocks = require('../database/models/stock')
-const showStocks = require('../database/models/show_stock')
+const { AddressModel } = require('../address/domain/address.entity')
+const childs = require('../domain/models/child')
+const childDynamicInfo = require('../domain/models/child_dynamic')
+const childStaticInfo = require('../domain/models/childStatic')
+const documents = require('../domain/models_v2/document')
+const guardians = require('../domain/models/guardian')
+const habits = require('../domain/models/child_info')
+const historyStocks = require('../domain/models/history_stock')
+const medicals = require('../domain/models/medical')
+const medicalsV2 = require('../domain/models_v2/medical')
+const rooms = require('../domain/models/enrollment')
+// const infoItems = require('../domain/models/info_item')
+const stocks = require('../domain/models/stock')
+const showStocks = require('../domain/models/show_stock')
 
-const { medicalInfo, documentInfo, habitInfo } = require('../helpers/handleArray')
+const {
+  medicalInfo,
+  documentInfo,
+  habitInfo,
+} = require('../helpers/handleArray')
 const {
   sendErrorResponse,
-  sendSuccessResponse
+  sendSuccessResponse,
 } = require('../helpers/apiResponse')
-const { stringToObjectId } = require('../database/models/roomType')
+const { stringToObjectId } = require('../domain/models/roomType')
 
 module.exports = {
-  async registerForm_v2 (req, res) {
+  async registerForm_v2(req, res) {
     const { position } = req
     if (position === 'admin' || position === 'accountant') {
       const {
@@ -32,7 +36,7 @@ module.exports = {
         address,
         document,
         habit,
-        medical
+        medical,
       } = req.body.listForm
 
       let gender = 0
@@ -52,7 +56,7 @@ module.exports = {
           lastname: child.lastname,
           gender,
           nickname: child.nickname,
-          birth_date: child.birth_date
+          birth_date: child.birth_date,
         })
 
         const childId = childInfo._id
@@ -61,7 +65,7 @@ module.exports = {
           child: childId,
           room,
           startDate: child.startDate,
-          endDate: null
+          endDate: null,
         })
         // create dynamic childInfo
         await childDynamicInfo.create({
@@ -71,21 +75,21 @@ module.exports = {
           weight: [
             {
               value: child.weight,
-              date: child.application_date
-            }
+              date: child.application_date,
+            },
           ],
           height: [
             {
               value: child.height,
-              date: child.application_date
-            }
+              date: child.application_date,
+            },
           ],
           photo: [
             {
               value: child.url,
-              date: child.application_date
-            }
-          ]
+              date: child.application_date,
+            },
+          ],
         })
         // create static childInfo
         await childStaticInfo.create({
@@ -95,7 +99,7 @@ module.exports = {
           religion: child.religion,
           number_of_siblings: child.siblingsNum,
           child_number: child.childNum,
-          application_date: child.application_date
+          application_date: child.application_date,
         })
 
         for (let i = 0; i < 3; i++) {
@@ -111,7 +115,7 @@ module.exports = {
                 telephone: father.telephone,
                 relationship: 'father',
                 url: null,
-                date_sign: null
+                date_sign: null,
               })
             }
           }
@@ -126,7 +130,7 @@ module.exports = {
                 telephone: mother.telephone,
                 relationship: 'mother',
                 url: null,
-                date_sign: null
+                date_sign: null,
               })
             }
           }
@@ -141,13 +145,13 @@ module.exports = {
                 telephone: custodian.telephone,
                 relationship: 'custodian',
                 url: custodian.url,
-                date: custodian.date_sign
+                date: custodian.date_sign,
               })
             }
           }
         }
         if (address.name_village !== null || address.telephone !== null) {
-          await addresses.create({
+          await AddressModel.create({
             child: childId,
             name_village: address.name_village,
             house_number: address.house_number,
@@ -156,7 +160,7 @@ module.exports = {
             district: address.district,
             province: address.province,
             telephone: address.telephone,
-            house_map: address.house_map
+            house_map: address.house_map,
           })
         }
 
@@ -164,7 +168,7 @@ module.exports = {
 
         await documents.create({
           child: childId,
-          info: documentList
+          info: documentList,
         })
 
         const listHabitResult = habitInfo(habit)
@@ -172,7 +176,7 @@ module.exports = {
         await habits.create({
           child: childId,
           infoItem: listHabitResult,
-          other: habit.other_information
+          other: habit.other_information,
         })
 
         const medicalList = medicalInfo(medical)
@@ -183,12 +187,14 @@ module.exports = {
           hospital: [
             {
               value: medical.Hospital,
-              date: child.application_date
-            }
-          ]
+              date: child.application_date,
+            },
+          ],
         })
 
-        res.status(201).json({ code: 201, message: 'ลงทะเบียนเสร็จสิ้น', data: null })
+        res
+          .status(201)
+          .json({ code: 201, message: 'ลงทะเบียนเสร็จสิ้น', data: null })
       } catch (error) {
         console.log(error.message)
         sendErrorResponse(res, error)
@@ -199,7 +205,7 @@ module.exports = {
     }
   },
 
-  async regisChild_v2 (req, res) {
+  async regisChild_v2(req, res) {
     const { position } = req
 
     if (position === 'admin' || position === 'accountant') {
@@ -225,13 +231,13 @@ module.exports = {
             lastname: child.lastname,
             gender,
             nickname: child.nickname,
-            birth_date: child.birth_date
+            birth_date: child.birth_date,
           })
         } else {
           res.json({
             code: 400,
             message: 'กรุณากรอกชื่อจริงนามสกุล',
-            data: null
+            data: null,
           })
           return
         }
@@ -243,13 +249,13 @@ module.exports = {
             child: childId,
             room,
             startDate: child.startDate,
-            endDate: null
+            endDate: null,
           })
         } else {
           res.json({
             code: 400,
             message: 'กรุณาเลือกห้องเรียนให้เด็กก่อน',
-            data: null
+            data: null,
           })
           return
         }
@@ -261,21 +267,21 @@ module.exports = {
           weight: [
             {
               value: child.weight,
-              date: child.application_date
-            }
+              date: child.application_date,
+            },
           ],
           height: [
             {
               value: child.height,
-              date: child.application_date
-            }
+              date: child.application_date,
+            },
           ],
           photo: [
             {
               value: child.url,
-              date: child.application_date
-            }
-          ]
+              date: child.application_date,
+            },
+          ],
         })
 
         await childStaticInfo.create({
@@ -285,7 +291,7 @@ module.exports = {
           religion: child.religion,
           number_of_siblings: child.siblingsNum,
           child_number: child.childNum,
-          application_date: child.application_date
+          application_date: child.application_date,
         })
 
         for (let i = 0; i < 3; i++) {
@@ -301,7 +307,7 @@ module.exports = {
                 telephone: father.telephone,
                 relationship: 'father',
                 url: null,
-                date_sign: null
+                date_sign: null,
               })
             }
           }
@@ -316,7 +322,7 @@ module.exports = {
                 telephone: mother.telephone,
                 relationship: 'mother',
                 url: null,
-                date_sign: null
+                date_sign: null,
               })
             }
           }
@@ -331,14 +337,14 @@ module.exports = {
                 telephone: custodian.telephone,
                 relationship: 'custodian',
                 url: custodian.url,
-                date: custodian.date_sign
+                date: custodian.date_sign,
               })
             }
           }
         }
 
         if (address.name_village !== null || address.telephone !== null) {
-          await addresses.create({
+          await AddressModel.create({
             child: childId,
             name_village: address.name_village,
             house_number: address.house_number,
@@ -347,11 +353,13 @@ module.exports = {
             district: address.district,
             province: address.province,
             telephone: address.telephone,
-            house_map: address.house_map
+            house_map: address.house_map,
           })
         }
 
-        res.status(201).json({ code: 201, message: 'ลงทะเบียนเสร็จสิ้น', data: null })
+        res
+          .status(201)
+          .json({ code: 201, message: 'ลงทะเบียนเสร็จสิ้น', data: null })
       } catch (error) {
         console.log(error.message)
         sendErrorResponse(res, error)
@@ -362,7 +370,7 @@ module.exports = {
     }
   },
 
-  async docForm_v1 (req, res) {
+  async docForm_v1(req, res) {
     const { position } = req
     if (position) {
       const { child, document, habit, medical } = req.body.listForm
@@ -373,13 +381,13 @@ module.exports = {
           copy_of_birth_certificate: document.birth_certificate,
           copy_of_idcard_or_passport: {
             father: document.id_card_father,
-            mother: document.id_card_mother
+            mother: document.id_card_mother,
           },
           copy_of_house_record: document.house_record,
           copy_of_life_insurance_card: document.life_lnsurance_card,
           copy_of_health_examination_and_vaccination_record:
             document.health_vaccination,
-          photo: document.baby_photo
+          photo: document.baby_photo,
         })
 
         const listHabitCompare = [
@@ -398,7 +406,7 @@ module.exports = {
           '5fe047b5a420791e31609d58',
           '5fe047cfa420791e31609d59',
           '5fe047dba420791e31609d5a',
-          '5fe047eda420791e31609d5b'
+          '5fe047eda420791e31609d5b',
         ]
 
         const listHabitRequest = [
@@ -417,7 +425,7 @@ module.exports = {
           habit.uht_milk_box,
           habit.always_use_diaper,
           habit.not_use_diaper,
-          habit.diaper_only_sleeping
+          habit.diaper_only_sleeping,
         ]
         const listHabitResult = []
 
@@ -428,12 +436,12 @@ module.exports = {
             if (listHabitRequest[a] === true) {
               listHabitResult.push({
                 info_item: listHabitCompare[a],
-                itemDetail: null
+                itemDetail: null,
               })
             } else {
               listHabitResult.push({
                 info_item: listHabitCompare[a],
-                itemDetail: listHabitRequest[a]
+                itemDetail: listHabitRequest[a],
               })
             }
           }
@@ -445,7 +453,7 @@ module.exports = {
           await habits.create({
             child,
             infoItem: listHabitResult,
-            other: habit.other_information
+            other: habit.other_information,
           })
         }
 
@@ -463,17 +471,19 @@ module.exports = {
               medical.Congenital_Heart_Disease,
             diabetes: medical.Diabetes,
             epilepsy_epilepsy_febrile_seizure: medical.Epilepsy_Febrile_Seizure,
-            hospital: medical.Hospital
+            hospital: medical.Hospital,
           })
         } else {
           res.json({
             code: 400,
             message: 'กรุณากรอกโรงพยาบาลด้วย',
-            data: null
+            data: null,
           })
           return
         }
-        res.status(201).json({ code: 201, message: 'กรอกเอกสารเสร็จสิ้น', data: null })
+        res
+          .status(201)
+          .json({ code: 201, message: 'กรอกเอกสารเสร็จสิ้น', data: null })
       } catch (error) {
         sendErrorResponse(res, error)
       }
@@ -483,7 +493,7 @@ module.exports = {
     }
   },
 
-  async docForm_v2 (req, res) {
+  async docForm_v2(req, res) {
     const { position, owner } = req
     if (position === 'admin' || position === 'accountant') {
       const { child, document, habit, medical, uniform } = req.body.listForm
@@ -501,7 +511,7 @@ module.exports = {
             res.json({
               code: 400,
               message: `กรุณาป้อนจำนวน${uniform[index].item}ของเป็นค่าบวก`,
-              data: null
+              data: null,
             })
             return 0
           }
@@ -514,26 +524,26 @@ module.exports = {
             hospital: [
               {
                 value: medical.Hospital,
-                date: child.application_date
-              }
-            ]
+                date: child.application_date,
+              },
+            ],
           })
         } else {
           res.json({
             code: 400,
             message: 'กรุณากรอกโรงพยาบาลด้วย',
-            data: null
+            data: null,
           })
           return
         }
         await documents.create({
           child,
-          info: documentList
+          info: documentList,
         })
         await habits.create({
           child,
           infoItem: listHabitResult,
-          other: habit.other_information
+          other: habit.other_information,
         })
 
         const listItemId = []
@@ -553,14 +563,14 @@ module.exports = {
             // console.log(checkSize);
             const result = await stocks.findOne({
               item: uniform[i].item,
-              size: checkSize
+              size: checkSize,
             })
             listItemId.push(result._id)
           } else {
             res.json({
               code: 400,
               message: 'กรุณาเลือกไซส์ตามที่กำหนดให้',
-              data: null
+              data: null,
             })
             return
           }
@@ -578,7 +588,7 @@ module.exports = {
             res.json({
               code: 400,
               message: `ขออภัยเป็นอย่างยิ่ง ${uniform[j].item}ไซส์นี้มีไม่เพียงพอ`,
-              data: null
+              data: null,
             })
             return
           } else {
@@ -597,11 +607,13 @@ module.exports = {
             updateOn: new Date(),
             amount: oldAmount,
             item: listItemId[k],
-            modify_by: owner
+            modify_by: owner,
           })
         }
 
-        res.status(201).json({ code: 201, message: 'กรอกเอกสารเสร็จสิ้น', data: null })
+        res
+          .status(201)
+          .json({ code: 201, message: 'กรอกเอกสารเสร็จสิ้น', data: null })
       } catch (error) {
         console.log(error)
         sendErrorResponse(res, error)
@@ -612,7 +624,7 @@ module.exports = {
     }
   },
 
-  async getChildNotRegister (req, res) {
+  async getChildNotRegister(req, res) {
     const { position } = req
     if (position === 'admin' || position === 'accountant') {
       try {
@@ -621,7 +633,7 @@ module.exports = {
 
         for (let i = 0; i < child.length; i++) {
           const haveChildDocument = await documents.findOne({
-            child: child[i]._id
+            child: child[i]._id,
           })
           console.log(haveChildDocument)
           if (haveChildDocument === null) {
@@ -631,7 +643,7 @@ module.exports = {
                 child[i].firstname +
                 child[i].middlename +
                 ' ' +
-                child[i].lastname
+                child[i].lastname,
             })
           }
         }
@@ -643,5 +655,5 @@ module.exports = {
       res.json({ code: 400, message: 'คุณไม่สามารถเข้าหน้านี้ได้', data: null })
       return 0
     }
-  }
+  },
 }

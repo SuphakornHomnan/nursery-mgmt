@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt')
 const nodeMailer = require('nodemailer')
 const crypto = require('crypto')
 
-const users = require('../database/models/users')
+const users = require('../domain/models/users')
 
 const genJWT = require('../services/genJWT')
 const { sendErrorResponse } = require('../helpers/apiResponse')

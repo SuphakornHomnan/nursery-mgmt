@@ -1,4 +1,3 @@
-const addressController = require('./addressController')
 const attendanceController = require('./attendanceController')
 const authController = require('./authController')
 const childController = require('./childController')
@@ -17,7 +16,6 @@ const stockController = require('./stockController')
 const userController = require('./userController')
 
 module.exports = {
-  addressController,
   attendanceController,
   authController,
   childController,

@@ -1,11 +1,11 @@
-const enroll = require('../database/models/enrollment')
-const room = require('../database/models/rooms')
+const enroll = require('../domain/models/enrollment')
+const room = require('../domain/models/rooms')
 
 const {
   sendSuccessResponse,
   sendErrorResponse
 } = require('../helpers/apiResponse')
-const { stringToObjectId } = require('../database/models/roomType')
+const { stringToObjectId } = require('../domain/models/roomType')
 
 module.exports = {
   async createRoom (req, res) {
