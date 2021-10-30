@@ -12,8 +12,8 @@ router.get(
 )
 router.post(
   '/',
-  // verifyJWT(),
-  // accessAdminAccoutant(),
+  verifyJWT(),
+  accessAdminAccoutant(),
   createAddress
 )
 
