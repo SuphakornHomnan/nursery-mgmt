@@ -1,12 +1,12 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 /* eslint-disable array-callback-return */
-const childs = require('../database/models/child')
-const payments = require('../database/models/payment')
-const customers = require('../database/models/customer')
-const stocks = require('../database/models/stock')
-const show_stocks = require('../database/models/show_stock')
-const history_stocks = require('../database/models/history_stock')
+const childs = require('../domain/models/child')
+const payments = require('../domain/models/payment')
+const customers = require('../domain/models/customer')
+const stocks = require('../domain/models/stock')
+const show_stocks = require('../domain/models/show_stock')
+const history_stocks = require('../domain/models/history_stock')
 const { getColor, genderColor } = require('../helpers/getColor')
 const {
   sendErrorResponse,

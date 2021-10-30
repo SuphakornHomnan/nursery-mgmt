@@ -1,5 +1,5 @@
-const medicals = require('../database/models/medical')
-const medicalV2 = require('../database/models_v2/medical')
+const medicals = require('../domain/models/medical')
+const medicalV2 = require('../domain/models_v2/medical')
 
 const { sendSuccessResponse, sendErrorResponse } = require('../helpers/apiResponse')
 

@@ -1,22 +1,22 @@
 const mongoose = require('mongoose')
-const childs = require('../database/models/child')
-const childDynamic = require('../database/models/child_dynamic')
-const documents = require('../database/models_v2/document')
-const guardians = require('../database/models/guardian')
-const medicalsV2 = require('../database/models_v2/medical')
-const rooms = require('../database/models/enrollment')
+const childs = require('../domain/models/child')
+const childDynamic = require('../domain/models/child_dynamic')
+const documents = require('../domain/models_v2/document')
+const guardians = require('../domain/models/guardian')
+const medicalsV2 = require('../domain/models_v2/medical')
+const rooms = require('../domain/models/enrollment')
 const {
   calculateStandardOne,
   calculateStandardTwo,
   calculateStandardThree,
-} = require('../database/calulateStandard')
+} = require('../domain/calulateStandard')
 const {
   checkRelation,
   handleChildV2,
   combineList,
 } = require('../helpers/handleProfileTwo')
 const { setInfoProfileTable } = require('../helpers/handleArray')
-const { stringToObjectId } = require('../database/models/roomType')
+const { stringToObjectId } = require('../domain/models/roomType')
 
 module.exports = {
   async getStatusButtonDocForm (req, res) {

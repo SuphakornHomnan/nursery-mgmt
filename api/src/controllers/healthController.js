@@ -1,12 +1,12 @@
-const healths = require('../database/models_v2/health')
-const rooms = require('../database/models/enrollment')
+const healths = require('../domain/models_v2/health')
+const rooms = require('../domain/models/enrollment')
 
 const {
   sendErrorResponse,
   sendSuccessResponse
 } = require('../helpers/apiResponse')
 const { setInfoHealthTable } = require('../helpers/handleArray')
-const { stringToObjectId } = require('../database/models/roomType')
+const { stringToObjectId } = require('../domain/models/roomType')
 
 module.exports = {
   async handleBreakfast (req, res) {

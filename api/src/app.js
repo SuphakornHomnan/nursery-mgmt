@@ -13,7 +13,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'jade')
 app.get('/',(req,res)=>res.send("hello server"))
 require('dotenv').config()
-require('./database/mongo')
+require('./domain/mongo')
 
 app.use(cors({ credentials: true, origin: true }))
 app.use(bodyParser.json())

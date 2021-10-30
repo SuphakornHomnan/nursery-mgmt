@@ -1,11 +1,11 @@
 /* eslint-disable space-unary-ops */
 /* eslint-disable no-unused-vars */
-const attendances = require('../database/models/attendance')
-const childs = require('../database/models/child')
-const childDynamic = require('../database/models/child_dynamic')
-const gadgets = require('../database/models_v2/gadget')
-const healths = require('../database/models_v2/health')
-const rooms = require('../database/models/enrollment')
+const attendances = require('../domain/models/attendance')
+const childs = require('../domain/models/child')
+const childDynamic = require('../domain/models/child_dynamic')
+const gadgets = require('../domain/models_v2/gadget')
+const healths = require('../domain/models_v2/health')
+const rooms = require('../domain/models/enrollment')
 
 const {
   sendErrorResponse,
@@ -17,7 +17,7 @@ const {
   prepareHealthInfo,
   getConditionMonthValue
 } = require('../helpers/dateConvert')
-const { stringToObjectId } = require('../database/models/roomType')
+const { stringToObjectId } = require('../domain/models/roomType')
 
 module.exports = {
   async searchName (req, res) {

@@ -1,7 +1,7 @@
 const moment = require('moment')
 const { v4: uuidv4 } = require('uuid')
-const attendances = require('../database/models/attendance')
-const rooms = require('../database/models/enrollment')
+const attendances = require('../domain/models/attendance')
+const rooms = require('../domain/models/enrollment')
 const {
   sendSuccessResponse
 } = require('../helpers/apiResponse')
@@ -14,7 +14,7 @@ const {
   setInfoAttendanceModal,
   setInfoAttendanceTable
 } = require('../helpers/handleArray')
-const { stringToObjectId } = require('../database/models/roomType')
+const { stringToObjectId } = require('../domain/models/roomType')
 
 module.exports = {
 

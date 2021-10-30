@@ -1,5 +1,5 @@
-const infoCategory = require('../database/models/info_category')
-const infoItem = require('../database/models/info_item')
+const infoCategory = require('../domain/models/info_category')
+const infoItem = require('../domain/models/info_item')
 
 const {
   sendErrorResponse

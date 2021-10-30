@@ -1,12 +1,12 @@
-const gadgets = require('../database/models/gadget')
-const gadgetsV2 = require('../database/models_v2/gadget')
-const rooms = require('../database/models/enrollment')
+const gadgets = require('../domain/models/gadget')
+const gadgetsV2 = require('../domain/models_v2/gadget')
+const rooms = require('../domain/models/enrollment')
 
 const { genderColor } = require('../helpers/getColor')
 const {
   sendSuccessResponse
 } = require('../helpers/apiResponse')
-const { stringToObjectId } = require('../database/models/roomType')
+const { stringToObjectId } = require('../domain/models/roomType')
 
 module.exports = {
   async showChild_v2 (req, res) {

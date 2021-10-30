@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt')
-const users = require('../database/models/users')
+const users = require('../domain/models/users')
 
 const {
   sendSuccessResponse,

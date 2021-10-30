@@ -1,6 +1,6 @@
-const historyStock = require('../database/models/history_stock')
-const showStocks = require('../database/models/show_stock')
-const stocks = require('../database/models/stock')
+const historyStock = require('../domain/models/history_stock')
+const showStocks = require('../domain/models/show_stock')
+const stocks = require('../domain/models/stock')
 
 const { v4: uuidv4 } = require('uuid')
 
